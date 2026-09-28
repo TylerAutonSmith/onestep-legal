@@ -54,7 +54,7 @@
 <body>
 <div class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: September 9, 2026</p>
+  <p class="updated">Last updated: September 19, 2026</p>
 
   <div class="card">
     <p>
@@ -69,13 +69,30 @@
     <li><strong>Account information.</strong> Your email address, and whether you
       signed in with email/password, Sign in with Apple, or Google Sign-In.</li>
     <li><strong>Content you create.</strong> The goals, milestones, action steps,
-      and habits you enter or generate, plus your daily habit completion history.
+      habits and day-to-day tasks you enter or generate, plus your daily habit
+      and task completion history.
       This is the data the app exists to store — it's synced to our database so
       it's available across your devices.</li>
-    <li><strong>Calendar access.</strong> If you turn on calendar sync, OneStep
-      reads and writes calendar events so your habits and action steps show up
-      alongside the rest of your schedule. This only happens after you grant the
-      OS-level calendar permission, and only for events OneStep creates or links.</li>
+    <li><strong>Calendar access.</strong> Calendar features are optional and
+      only start once you turn them on.
+      <em>Device calendar:</em> after you grant the OS-level calendar
+      permission, OneStep reads the events on your device's calendars (their
+      titles and times) to show them next to your plan and schedule around them,
+      and adds your habits and action steps as events. You can hide individual
+      calendars in Settings. Events read from your device calendar stay on your
+      device, apart from the start and end times the "Today" planner uses
+      (see below).
+      <em>Google Calendar:</em> if you connect a Google account, you grant
+      OneStep access to view and edit events and to view your list of
+      calendars. We store a Google access credential (a refresh token) for that
+      account on our servers — it is never sent back to the app — together with
+      the account's email address and the calendar OneStep writes to. With it,
+      our server reads the events (titles and times) on that account's
+      calendars to show them in the app, and creates, updates and deletes the
+      events for your habits and steps. Event contents pass through to your
+      device; they are not stored on our servers. Disconnecting in Settings
+      deletes the stored credential, and you can also remove OneStep's access at
+      myaccount.google.com/permissions.</li>
     <li><strong>Notification data.</strong> A device push token, used solely to
       deliver the daily reminder you configure in Settings.</li>
     <li><strong>Subscription status.</strong> Whether you're on the free or
@@ -95,8 +112,14 @@
       sent to Anthropic's Claude API to produce the milestone/step/habit
       breakdown. Anthropic processes this text to generate a response; it is not
       used to identify you.</li>
+    <li>To plan your day: when you use the "Today" brain dump, the text you type
+      is sent to Anthropic's Claude API, together with the titles and times of
+      the OneStep habits and steps already planned for today. If calendar access
+      is on, only the <em>start and end times</em> of your calendar events are
+      included, so the plan can avoid them — never their titles or details.</li>
     <li>To send the daily reminder notification you opt into.</li>
-    <li>To sync events to your calendar, if you enable that feature.</li>
+    <li>To show your calendar events alongside your plan and add your habits
+      and steps to your calendar, if you turn calendar features on.</li>
     <li>To determine your subscription tier and unlock premium features.</li>
     <li>To diagnose and fix crashes.</li>
   </ul>
@@ -107,11 +130,13 @@
   <ul>
     <li><strong>Supabase</strong> — hosts our database and handles
       authentication.</li>
-    <li><strong>Anthropic</strong> — processes the goal text you submit to
-      generate your plan.</li>
+    <li><strong>Anthropic</strong> — processes the goal and task text you submit
+      to generate your plan, as described above.</li>
     <li><strong>RevenueCat</strong> — manages subscription entitlement state.</li>
     <li><strong>Apple / Google</strong> — process sign-in (Sign in with Apple,
-      Google Sign-In) and, for subscribers, all payment processing.</li>
+      Google Sign-In) and, for subscribers, all payment processing. If you
+      connect Google Calendar, Google's Calendar API also provides and receives
+      the calendar events described above.</li>
     <li><strong>Sentry</strong> — receives crash/error diagnostics, if enabled.</li>
   </ul>
 
@@ -122,8 +147,10 @@
   <h2>Deleting your account</h2>
   <p>Open the app, go to <strong>Settings → Delete Account</strong>, and confirm.
     This immediately and permanently deletes your account and every goal,
-    milestone, action step, habit, and habit-completion record associated with
-    it. This cannot be undone. Deleting your account does not cancel an active
+    milestone, action step, habit, habit-completion record and day task
+    associated with it, along with any stored Google Calendar credential. This
+    cannot be undone. Events OneStep already added to your calendar stay there
+    until you delete them. Deleting your account does not cancel an active
     App Store or Play Store subscription — cancel that separately from your
     device's subscription settings.</p>
 
