@@ -54,7 +54,7 @@
 <body>
 <div class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: September 19, 2026</p>
+  <p class="updated">Last updated: September 29, 2026</p>
 
   <div class="card">
     <p>
@@ -117,6 +117,11 @@
       the OneStep habits and steps already planned for today. If calendar access
       is on, only the <em>start and end times</em> of your calendar events are
       included, so the plan can avoid them — never their titles or details.</li>
+    <li>To break a step into a checklist, revise part of your plan, or write
+      your weekly check-in: the step, plan or goal text involved is sent to
+      Anthropic's Claude API. The weekly check-in also includes your active
+      goal titles and how many times you completed each habit last week and
+      this week.</li>
     <li>To send the daily reminder notification you opt into.</li>
     <li>To show your calendar events alongside your plan and add your habits
       and steps to your calendar, if you turn calendar features on.</li>
@@ -124,14 +129,22 @@
     <li>To diagnose and fix crashes.</li>
   </ul>
 
+  <h2>Your permission for AI features</h2>
+  <p>OneStep asks for your permission before it sends anything to Anthropic,
+    and nothing is sent until you agree. You can turn this off at any time in
+    <strong>Settings → AI planning</strong>; with it off, OneStep sends nothing
+    to Anthropic, and features that need AI to build or change a plan won't
+    work until you turn it back on.</p>
+
   <h2>Who we share data with</h2>
   <p>We don't sell your data. We use the following service providers, each of
     whom processes data only to provide their specific service to us:</p>
   <ul>
     <li><strong>Supabase</strong> — hosts our database and handles
       authentication.</li>
-    <li><strong>Anthropic</strong> — processes the goal and task text you submit
-      to generate your plan, as described above.</li>
+    <li><strong>Anthropic</strong> — processes the goal and task text you submit,
+      and the progress summary described above, to generate your plan and
+      check-ins. Only with your permission.</li>
     <li><strong>RevenueCat</strong> — manages subscription entitlement state.</li>
     <li><strong>Apple / Google</strong> — process sign-in (Sign in with Apple,
       Google Sign-In) and, for subscribers, all payment processing. If you
